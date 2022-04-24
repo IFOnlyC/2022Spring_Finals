@@ -10,17 +10,27 @@ Jingwei Wang (jw103)  Github: sky1122
 
 HangQing He (hhe16)  Github: mingzhuqiuxiahhq
 
+**每个假设分析的数据时间范围需要统一嘛？**
 
 Hypothesis 1:
 
 The impact of bike share and mobility as a service (Uber and Lyft) took half of the market from Taxi in NYC（多城市比较）
 
+几个城市?
+taxi数据
+Uber lyft数据
+bike数据
  
 
 Hypothesis 2:
 
 The effect of covid-19 gave bike share more customers over Taxi and Uber and Lyft  
 
+几个城市？
+covid数据
+taxi数据
+Uber lyft数据
+bike数据
  
 
 Hypothesis 3:
@@ -31,9 +41,14 @@ Bike shares are preferred over Taxi and Uber and Lyft in short-range distance jo
 
 Hypothesis 3 Something if we find short distance as less than x km, than we expect that the number of usage of bike will be greater than the number of usage of uber…
 
+几个城市？
+taxi数据
+Uber lyft数据
+bike数据
+
 
 DataSets:
-数据时间范围
+
 
 Bikeshare(LA): https://bikeshare.metro.net/about/data/
 
