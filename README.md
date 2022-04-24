@@ -26,12 +26,15 @@ The effect of covid-19 gave bike share more customers over Taxi and Uber and Lyf
 Hypothesis 3:
 
 Bike shares are preferred over Taxi and Uber and Lyft in short-range distance journies. （确定distance距离）
+
 老师建议： 
+
 Hypothesis 3 Something if we find short distance as less than x km, than we expect that the number of usage of bike will be greater than the number of usage of uber…
 
 
 DataSets:
 数据时间范围
+
 Bikeshare(LA): https://bikeshare.metro.net/about/data/
 
 divvybikeshare(Chicago): https://data.cityofchicago.org/Transportation/Divvy-Trips/fg6s-gzvghttps://data.cityofchicago.org/Transportation/Divvy-Trips/fg6s-gzvg
