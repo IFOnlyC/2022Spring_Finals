@@ -13,7 +13,7 @@ HangQing He (hhe16)  Github: mingzhuqiuxiahhq
 
 Hypothesis 1:
 
-The impact of bike share and mobility as a service (Uber and Lyft) took half of the market from Taxi in NYC
+The impact of bike share and mobility as a service (Uber and Lyft) took half of the market from Taxi in NYC（多城市比较）
 
  
 
