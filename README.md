@@ -51,3 +51,5 @@ City Of NYC transportation: https://data.cityofnewyork.us/Transportation/FHV-Bas
 
 Transportation Network Providers - Trips(Chicago): https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p
 
+Taxi(Chicago): https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew
+
