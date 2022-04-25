@@ -14,7 +14,8 @@ HangQing He (hhe16)  Github: mingzhuqiuxiahhq
 ### Hypothesis 1:
 
 Users prefer to use shared bicycles in spring and summer rather than autumn and winter.
- 
+
+
 ### Hypothesis 2:
 
 The effect of COVID-19 pandemic on bike share is greater in Eastern US than Western US.
@@ -34,4 +35,3 @@ Citibike(NYC): https://ride.capitalbikeshare.com/system-data
 Blue Bike(Boston): https://www.bluebikes.com/system-data
 
 Capital Bikeshare(Washton D.C): https://ride.capitalbikeshare.com/system-data
-
