@@ -18,7 +18,7 @@ Users prefer to use shared bicycles in spring and summer rather than autumn and 
 
 ### Hypothesis 2:
 
-The effect of COVID-19 pandemic on bike share is greater in Eastern US than Western US.
+The effect of COVID-19 pandemic on bike share is greater in Eastern US than Western US and Middle of US.
 
 ### Hypothesis 3:
 
