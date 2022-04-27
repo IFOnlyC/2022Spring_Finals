@@ -49,8 +49,12 @@ Capital Bikeshare(Washton D.C): https://ride.capitalbikeshare.com/system-data
 
 ### Covid-19 Data Source:
 
-NYC: https://github.com/nychealth/coronavirus-data （他们传在了github上）
+NYC: https://github.com/nychealth/coronavirus-data （他们传在了github上)
+
 Washington: https://doh.wa.gov/emergencies/covid-19/data-dashboard#downloads
+
 Boston: https://www.boston.gov/news/coronavirus-disease-covid-19-boston (没法进它的data dashboard，显示404，然后估计可以从MA州里面找我们需要的数据？)
+
 SFO: https://sf.gov/data/covid-19-cases-and-deaths
+
 Washington: https://doh.wa.gov/emergencies/covid-19/data-dashboard
