@@ -102,15 +102,13 @@ def file_to_df(file_name, file_list):
 
         main_df = pd.DataFrame()
         path = "./"
+        df = []
         for f in file_list:
-            df = pd.read_csv(path + f, header=0, usecols=usecolumns)
-            main_df = main_df.append(df)
+            df.append(pd.read_csv(path + f, header=0, usecols=usecolumns))
+            main_df = pd.concat(df)
 
-        # for f in file_list:
-        #     df = pd.read_csv(path + f, header=0, usecols=usecolumns)
-        #     main_df = main_df.append(df)
-        # display(main_df.head(10))
-        # display(main_df.tail(10))
+        main_df['name'] = file_name
+
         return main_df
 
     except Exception as err:
@@ -155,15 +153,18 @@ def clean_df(df, *df_name, df_type='covid'):
 
 
 def cast_bike_df(df, df_name):
-
-    if df_name in ['divvy', 'bay', 'capital']:
+    if df_name in ['divvy', 'bay', 'capital', 'citi']:
         df['started_at'] = pd.to_datetime(df['started_at'])
         df['ended_at'] = pd.to_datetime(df['ended_at'])
         df['tripduration'] = (df['ended_at'] - df['started_at']).dt.total_seconds().astype(int)
-    if df_name in ['blue', 'citi']:
-        pass
+    #
+    # if df_name in ['blue']:
+    #     df[''] = pd.to_datetime()
+    #     df
+
 
     return df
+
 
 def df_dist(df, df_name):
     gl = Geodesic.WGS84
