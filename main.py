@@ -85,9 +85,9 @@ def file_to_df(file_name, file_list):
             raise IndexError('no file found in the directory')
 
         usecolumns = []
-        if file_name in ['blue bike', 'citi bike']:
+        if file_name == 'blue bike':
             usecolumns = ['bikeid', 'starttime', 'stoptime', 'start station latitude', 'start station longitude', 'end station latitude', 'end station longitude', 'usertype', 'tripduration']
-        elif file_name in ['divvy bike', 'bay wheel bike', 'capital bike']:
+        elif file_name in ['divvy bike', 'bay wheel bike', 'capital bike', 'citi bike']:
             usecolumns = ['ride_id', 'started_at', 'ended_at', 'start_lat', 'start_lng', 'end_lat', 'end_lng', 'member_casual']
         elif file_name == 'NYC covid':
             usecolumns = ['DATE_OF_INTEREST', 'CASE_COUNT']
@@ -105,6 +105,10 @@ def file_to_df(file_name, file_list):
         for f in file_list:
             df = pd.read_csv(path + f, header=0, usecols=usecolumns)
             main_df = main_df.append(df)
+
+        # for f in file_list:
+        #     df = pd.read_csv(path + f, header=0, usecols=usecolumns)
+        #     main_df = main_df.append(df)
         # display(main_df.head(10))
         # display(main_df.tail(10))
         return main_df
