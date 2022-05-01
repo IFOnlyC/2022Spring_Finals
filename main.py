@@ -56,10 +56,9 @@ def prepare_files(url, *file_name, file_type='bike'):
 
         # check the csv files are already exist
         # if exist then ignore
-
+        file_name = file_name[0]
         # download and unzip files in the range of periods
         for p in period_range:
-            file_name = file_name[0]
             p = p.strftime("%Y%m")
             file_url = url + p + file_name
             if 'citibike' in file_name.split('-'):
