@@ -121,7 +121,6 @@ def clean_df(df, *df_name, df_type='covid'):
         df = df_dist(df, df_name)
         df = cast_bike_df(df, df_name)
 
-
     if df_type == 'covid':
         if df_name == 'NYC covid':
             df = df.rename(columns={'DATE_OF_INTEREST': 'Date', 'CASE_COUNT': 'Cases'})
