@@ -52,7 +52,7 @@ def prepare_files(url, *file_name, file_type='bike'):
         prev_period = datetime(cur_year, cur_month, 1).strftime("%Y-%m-%d")
 
         # period_range = pandas.period_range(start='2021-01-01', end=prev_period, freq='m')
-        period_range = pd.period_range(start='2021-01-01', end='2021-04-01', freq='m')
+        period_range = pd.period_range(start='2021-03-01', end='2021-04-01', freq='m')
 
         # check the csv files are already exist
         # if exist then ignore
@@ -103,11 +103,10 @@ def file_to_df(file_name, file_list):
         main_df = pd.DataFrame()
         path = "./"
         df = []
+
         for f in file_list:
             df.append(pd.read_csv(path + f, header=0, usecols=usecolumns))
             main_df = pd.concat(df)
-
-        main_df['name'] = file_name
 
         return main_df
 
@@ -117,11 +116,11 @@ def file_to_df(file_name, file_list):
 
 def clean_df(df, *df_name, df_type='covid'):
     df_name = df_name[0]
+
     if df_type == 'bike':
-        if df_name in ['divvy', 'bay', 'capital']:
-            cast_bike_df(df, df_name)
-        if df_name in ['blue', 'citi']:
-            pass
+        df = df_dist(df, df_name)
+        df = cast_bike_df(df, df_name)
+
 
     if df_type == 'covid':
         if df_name == 'NYC covid':
@@ -146,9 +145,7 @@ def clean_df(df, *df_name, df_type='covid'):
         if df_name == 'SFO covid':
             df = df.rename(columns={'Specimen Collection Date': 'Date', 'New Cases': 'Cases'})
             df = cast_covid_data(df)
-
-    display(df)
-
+    df['name'] = df_name
     return df
 
 
@@ -157,26 +154,31 @@ def cast_bike_df(df, df_name):
         df['started_at'] = pd.to_datetime(df['started_at'])
         df['ended_at'] = pd.to_datetime(df['ended_at'])
         df['tripduration'] = (df['ended_at'] - df['started_at']).dt.total_seconds().astype(int)
-    #
-    # if df_name in ['blue']:
-    #     df[''] = pd.to_datetime()
-    #     df
-
-
+    if df_name == 'blue':
+        df['starttime'] = pd.to_datetime(df['starttime'])
+        df['stoptime'] = pd.to_datetime(df['stoptime'])
+        df = df.rename(columns={'bikeid': 'ride_id', 'starttime': 'started_at', 'stoptime': 'ended_at', 'start station latitude': 'start_lat', 'start station longitude': 'start_lng', 'end station latitude': 'end_lat', 'end station longitude': 'end_lng', 'usertype': 'member_casual'})
     return df
 
 
 def df_dist(df, df_name):
     gl = Geodesic.WGS84
-    list = []
-    if df_name in ['divvy', 'bay', 'capital']:
+    dist_list = []
+    if df_name in ['divvy', 'bay', 'capital', 'citi']:
         for index, row in df.iterrows():
-            list.append(gl.Inverse(row['start_lat'], row['start_lng'], row['end_lat'], row['end_lng'])['s12'])
-        list = pd.DataFrame(list)
-        new_df = pd.concat([df, list])
-
-    return new_df
-
+            dist = gl.Inverse(row['start_lat'], row['start_lng'], row['end_lat'], row['end_lng'])['s12']
+            dist = round(dist/1852.0, 2)
+            dist_list.append(dist)
+        dist_list = pd.DataFrame(dist_list)
+        df['dist'] = dist_list
+    if df_name == 'blue':
+        for index, row in df.iterrows():
+            dist = gl.Inverse(row['start station latitude'], row['start station longitude'], row['end station latitude'], row['end station longitude'])['s12']
+            dist = round(dist/1852.0, 2)
+            dist_list.append(dist)
+        dist_list = pd.DataFrame(dist_list)
+        df['dist'] = dist_list
+    return df
 
 
 def cast_covid_data(df):
@@ -192,17 +194,14 @@ def cast_covid_data(df):
 
 
 def merge_df(df_list, *df_name):
-    merged = pd.DataFrame()
-
-
-
+    merged = pd.concat(df_list, ignore_index=True)
     return merged
 
 
 if __name__ == '__main__':
     # request bike files from url
     # read csv files
-    # load csv files into data frame
+    # load csv files into data f-rame
     # aggregate spring, summer, august and winter data
     # request covid 19 files
     # plot # of cases vs bike share usage
@@ -213,55 +212,76 @@ if __name__ == '__main__':
     capital_bike_files = prepare_files(capital_bike_url, capital_bike_zip)
     capital_bike_df = file_to_df('capital bike', capital_bike_files)
     capital_cleaned_df = clean_df(capital_bike_df, 'capital', df_type='bike')
+    print(capital_cleaned_df.dtypes)
+    print(len(capital_cleaned_df.dtypes))
 
     citi_bike_url = 'https://s3.amazonaws.com/tripdata/JC-'
     citi_bike_zip = '-citibike-tripdata.csv.zip'
     citi_bike_files = prepare_files(citi_bike_url, citi_bike_zip)
     citi_bike_df = file_to_df('citi bike', citi_bike_files)
     citi_cleaned_df = clean_df(citi_bike_df, 'citi', df_type='bike')
+    print(citi_cleaned_df.dtypes)
+    print(len(citi_cleaned_df.dtypes))
 
     divvy_bike_url = 'https://divvy-tripdata.s3.amazonaws.com/'
     divvy_bike_zip = '-divvy-tripdata.zip'
     divvy_bike_files = prepare_files(divvy_bike_url, divvy_bike_zip)
     divvy_bike_df = file_to_df('divvy bike', divvy_bike_files)
     divvy_cleaned_df = clean_df(divvy_bike_df, 'divvy', df_type='bike')
+    print(divvy_cleaned_df.dtypes)
+    print(len(divvy_cleaned_df.dtypes))
 
     blue_bike_url = 'https://s3.amazonaws.com/hubway-data/'
     blue_bike_zip = '-bluebikes-tripdata.zip'
     blue_bike_files = prepare_files(blue_bike_url, blue_bike_zip)
     blue_bike_df = file_to_df('blue bike', blue_bike_files)
     blue_cleaned_df = clean_df(blue_bike_df, 'blue', df_type='bike')
+    print(blue_cleaned_df.dtypes)
+    print(len(blue_cleaned_df.dtypes))
 
     bay_wheel_url = 'https://s3.amazonaws.com/baywheels-data/'
     bay_wheel_zip = '-baywheels-tripdata.csv.zip'
     bay_wheel_files = prepare_files(bay_wheel_url, bay_wheel_zip)
     bay_wheel_df = file_to_df('bay wheel bike', bay_wheel_files)
     bay_cleaned_df = clean_df(bay_wheel_df, 'bay', df_type='bike')
+    print(bay_cleaned_df.dtypes)
+    print(len(bay_cleaned_df.dtypes))
 
-    bike_list = ['capital_cleaned_df', 'citi_cleaned_df', 'divvy_cleaned_df', 'blue_cleaned_df', 'bay_cleaned_df']
+    bike_list = [capital_cleaned_df, citi_cleaned_df, divvy_cleaned_df, blue_cleaned_df, bay_cleaned_df]
 
     NYC_covid_url = 'https://data.cityofnewyork.us/api/views/rc75-m7u3/rows.csv?accessType=DOWNLOAD'
     NYC_file = prepare_files(NYC_covid_url, 'NYC_covid', file_type='covid')
     NYC_df = file_to_df('NYC covid', NYC_file)
     NYC_cleaned_df = clean_df(NYC_df, 'NYC covid')
+    print(NYC_cleaned_df.dtypes)
+    print(len(NYC_cleaned_df.dtypes))
+
 
     WAS_df = file_to_df('DC_COVID-19_', [])
     WAS_cleaned_df = clean_df(WAS_df, 'WAS covid')
-
+    print(WAS_cleaned_df.dtypes)
+    print(len(WAS_cleaned_df.dtypes))
     SFO_covid_url = 'https://data.sfgov.org/api/views/gyr2-k29z/rows.csv?accessType=DOWNLOAD'
     SFO_file = prepare_files(SFO_covid_url, 'SFO_covid', file_type='covid')
     SFO_df = file_to_df('SFO covid', SFO_file)
     SFO_cleaned_df = clean_df(SFO_df, 'SFO covid')
-
+    print(SFO_cleaned_df.dtypes)
+    print(len(SFO_cleaned_df.dtypes))
     CHI_covid_url = 'https://data.cityofchicago.org/api/views/naz8-j4nc/rows.csv?accessType=DOWNLOAD'
     CHI_file = prepare_files(CHI_covid_url, 'CHI_covid', file_type='covid')
     CHI_df = file_to_df('CHI covid', CHI_file)
     CHI_cleaned_df = clean_df(CHI_df, 'CHI covid')
+    print(CHI_cleaned_df.dtypes)
+    print(len(CHI_cleaned_df.dtypes))
 
     BOS_df = file_to_df('Boston_COVID', [])
     BOS_cleaned_df = clean_df(BOS_df, 'BOS covid')
+    print(BOS_cleaned_df.dtypes)
+    print(len(BOS_cleaned_df.dtypes))
 
-    covid_list = ['NYC_cleaned_df', 'WAS_cleaned_df', 'SFO_cleaned_df', 'CHI_cleaned_df', 'BOS_cleaned_df']
+    covid_list = [NYC_cleaned_df, WAS_cleaned_df, SFO_cleaned_df, CHI_cleaned_df, BOS_cleaned_df]
 
     bike_merge_df = merge_df(bike_list)
     covid_merge_df = merge_df(covid_list)
+
+
