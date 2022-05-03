@@ -24,7 +24,7 @@ The effect of COVID-19 pandemic on bike share is greater by 10% in X ... Y.
 以月为单位算trip总数， covid case总数
 
 ### Hypothesis 3:
-Members prefer using bike share than non-member when distance between start and destination is less than 1 miles and trip duration is less than 15 minutes in these cities.
+Members prefer using bike share than casual member(non-member) when distance between start and destination is less than 1 miles and trip duration is less than 15 minutes in these cities.
 
 We will use five cities including **Boston, Washton D.C, Chicago, San Francisco, New York** to test our hypothesis. In these five cities, the bikeshare companies have two category users which are member and casual.
 The following pictures display the distrubution of the member and casual users
@@ -41,6 +41,8 @@ San Francisco is considered a Mediterranean climate, so the fluctuations are not
 
 To further analysis the trip duration and distance in different cities and user's category, we explore and clear data to keep duration and distance data in a range that show their distribution.
 
+***For Trip Duration***
+
 ![image](https://user-images.githubusercontent.com/48091236/166536422-1899d1ee-c745-4e48-9c56-a7df16891c5e.png)![image](https://user-images.githubusercontent.com/48091236/166552872-884326cc-8d58-483c-8c85-1ea6f5cf740d.png)
 
 ![image](https://user-images.githubusercontent.com/48091236/166552680-c16c7b22-1014-45ef-9b4e-caec2dae4be2.png)![image](https://user-images.githubusercontent.com/48091236/166552748-cc75e6e5-0289-4139-9b01-938a23695530.png)
@@ -51,14 +53,21 @@ To further analysis the trip duration and distance in different cities and user'
 
 ![image](https://user-images.githubusercontent.com/48091236/166553177-a072e6ba-acc5-4ddd-b31d-c16dcaf54434.png)![image](https://user-images.githubusercontent.com/48091236/166553200-9c8b3f4c-591c-4953-a7da-ec53f19b81a9.png)
 
+**overall, the most trip duration is lasting about 20 minutes, and members are more willing to hava a shorter trip compared with casual user.**
 
+***For Trip Distance***
+![image](https://user-images.githubusercontent.com/48091236/166566063-c8d3b711-b66c-41ae-8036-347282fe8cee.png)![image](https://user-images.githubusercontent.com/48091236/166566109-36d6b143-9a6a-4da9-a1c8-ab2238677a52.png)
+![image](https://user-images.githubusercontent.com/48091236/166566142-f63096cd-8045-489a-b33a-2c062322f75b.png)![image](https://user-images.githubusercontent.com/48091236/166566183-b07fd268-b122-47cb-a0cd-bde2158865e5.png)
+![image](https://user-images.githubusercontent.com/48091236/166566226-d25afafe-c481-4880-be6f-7d20ad9eac31.png)![image](https://user-images.githubusercontent.com/48091236/166566262-8bd465c4-82f9-40cf-a4be-93e47e00df33.png)
+![image](https://user-images.githubusercontent.com/48091236/166566344-5c4b0d0e-5b73-4ec4-96fd-e21d15780b82.png)![image](https://user-images.githubusercontent.com/48091236/166566381-c877d771-067d-4507-b914-4b8aff247bc9.png)
+![image](https://user-images.githubusercontent.com/48091236/166566432-9e42057e-8320-4a70-94da-8dc6bb9b41ce.png)![image](https://user-images.githubusercontent.com/48091236/166566464-30156d39-75ee-4f7a-9f9f-f1a405ffd496.png)
 
+***overall, the distribution bwtween members and casual members for trip Distance is similar.***
 
+Sum up the difference between members and casual users behavior in trip duration and distance, we calculate mean in five different cities.
+![image](https://user-images.githubusercontent.com/48091236/166570977-2a9e3ea4-a961-4103-bb09-face98537451.png)
 
-
-
-
-
+***Conclusion:*** members and casual members have simialr trip distance, but members' trip duration time is lesser than casual users. Members prefer using bike share than casual member(non-member) when trip duration is about 10 minutes in these cities.
 
 
 ### DataSets Source:
