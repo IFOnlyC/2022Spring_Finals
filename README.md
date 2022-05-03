@@ -29,10 +29,10 @@ Members prefer using bike share than non-member when distance between start and 
 We will use five cities including **Boston, Washton D.C, Chicago, San Francisco, New York** to test our hypothesis. In these five cities, the bikeshare companies have two category users which are member and casual.
 The following pictures display the distrubution of the member and casual users
 
-![image](https://user-images.githubusercontent.com/48091236/166519976-66f124a9-538c-43c1-9a45-512cb147b0b9.png)
-![image](https://user-images.githubusercontent.com/48091236/166515595-7fc2fa55-5ada-4c83-9979-aa9997d48ed7.png)
-![image](https://user-images.githubusercontent.com/48091236/166515634-69a74323-f7f3-484a-81c6-0081b9b62611.png)
-![image](https://user-images.githubusercontent.com/48091236/166515666-5d91a386-d64a-432c-bd2c-eba638b58283.png)
+![image](https://user-images.githubusercontent.com/48091236/166553359-01e048a6-7da2-441d-af0f-652fffd3df27.png)
+![image](https://user-images.githubusercontent.com/48091236/166553406-433ff8e4-5327-48cc-bd36-c1495fa0d030.png)
+![image](https://user-images.githubusercontent.com/48091236/166553482-75db77a2-57f4-4757-a2fa-cb88b50ad542.png)
+![image](https://user-images.githubusercontent.com/48091236/166553541-110c5256-b227-411f-b174-2023381c118f.png)
 ![image](https://user-images.githubusercontent.com/48091236/166515696-1ef01b14-52d1-47e2-a84c-53d78062825e.png)
 
 Improving the user conversion rate in Boston is hard because the proportion of casual is relatively smaller and stable than in other cities.
@@ -41,7 +41,21 @@ San Francisco is considered a Mediterranean climate, so the fluctuations are not
 
 To further analysis the trip duration and distance in different cities and user's category, we explore and clear data to keep duration and distance data in a range that show their distribution.
 
-![image](https://user-images.githubusercontent.com/48091236/166536422-1899d1ee-c745-4e48-9c56-a7df16891c5e.png)![image](https://user-images.githubusercontent.com/48091236/166536848-ff8146ae-e05d-40fb-933d-74a399a7e2ee.png)
+![image](https://user-images.githubusercontent.com/48091236/166536422-1899d1ee-c745-4e48-9c56-a7df16891c5e.png)![image](https://user-images.githubusercontent.com/48091236/166552872-884326cc-8d58-483c-8c85-1ea6f5cf740d.png)
+
+![image](https://user-images.githubusercontent.com/48091236/166552680-c16c7b22-1014-45ef-9b4e-caec2dae4be2.png)![image](https://user-images.githubusercontent.com/48091236/166552748-cc75e6e5-0289-4139-9b01-938a23695530.png)
+
+![image](https://user-images.githubusercontent.com/48091236/166552991-e641dc8c-4de2-4692-a82b-2d33a886974c.png)![image](https://user-images.githubusercontent.com/48091236/166553037-2464f373-dbcd-45b9-8112-38555ba30ef1.png)
+
+![image](https://user-images.githubusercontent.com/48091236/166553072-37792f65-6f56-4a65-a08b-32aad998b3fe.png)![image](https://user-images.githubusercontent.com/48091236/166553142-79e3fd53-1d34-41be-a8b9-9a6c3cccc332.png)
+
+![image](https://user-images.githubusercontent.com/48091236/166553177-a072e6ba-acc5-4ddd-b31d-c16dcaf54434.png)![image](https://user-images.githubusercontent.com/48091236/166553200-9c8b3f4c-591c-4953-a7da-ec53f19b81a9.png)
+
+
+
+
+
+
 
 
 
