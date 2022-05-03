@@ -463,3 +463,8 @@ if __name__ == '__main__':
     weather_df = merge_df(weather_list)
     weather_cleaned = clean_df(weather_df, df_type='weather')
 
+    # save processed data into .csv file
+    # avoid long time requesting and processing data again
+    bike_merge_df.to_csv('bike_merge_df.csv')
+    covid_merge_df.to_csv('covid_merge_df.csv')
+    weather_cleaned.to_csv('weather_merge_df.csv')
