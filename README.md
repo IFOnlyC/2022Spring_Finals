@@ -20,19 +20,23 @@ First, we create a plot of each city's total shared bike usage quarterly.
 (July-Sep: Q3)
 (Oct-Dec: Q4)
 
-![bike_trend](https://user-images.githubusercontent.com/63156187/166610955-b7cf3f27-9459-4250-b408-4f2ec010629e.png)
+![bike_trend](https://user-images.githubusercontent.com/63156187/166621514-9686a4d4-a6b1-457e-a3e0-c81d43dfa1d9.png)
 
 We can see that in each city, the bike usage in Q3 is higher than others. The plots support our hypothesis. Therefore, the usage of shared bikes in Summer is greater than other seasons. But why?
 Then we conduct a deeper analysis in daily weather dimension.
 
-![image](https://user-images.githubusercontent.com/63156187/166611294-38575b30-0829-4330-bdaa-6ce1c8b3b52f.png)
-![image](https://user-images.githubusercontent.com/63156187/166611296-b02d51a9-92ce-448f-aa3e-cdb49e212761.png)
-![image](https://user-images.githubusercontent.com/63156187/166611300-3f7e7e2c-1fd7-4abe-a022-4e879ab201cd.png)
-![image](https://user-images.githubusercontent.com/63156187/166611303-0a8e7cc9-2168-498a-b9b1-a786655f9767.png)
-![image](https://user-images.githubusercontent.com/63156187/166611305-e0ef57d0-df80-46a6-a24c-1716502d36ca.png)
+![Boston-weather](https://user-images.githubusercontent.com/63156187/166621435-95065a67-5720-45a2-9f43-ade0a60dac55.png)
+![Chicago-weather](https://user-images.githubusercontent.com/63156187/166621452-13fff0eb-8094-4ba3-ade7-82bf4d00ddbb.png)
+![NYC-weather](https://user-images.githubusercontent.com/63156187/166621477-80c991a7-9222-421b-b57b-fb6a826accb0.png)
+![SFO-weather](https://user-images.githubusercontent.com/63156187/166621485-de165260-0c51-4451-8ca3-7890c0171e46.png)
+![Washington-weather](https://user-images.githubusercontent.com/63156187/166621493-356f8032-0382-42ef-a967-0146293d0558.png)
 
 The plots above are the number of types of daily weather in each city.
-We find that the reason why users prefer to use shared bikes in summer is because of the weather because in each city, the proportion of good weather is greater in Q3. However, the proportion of rainy days is also higher in some cities, so we need to do further analysis to figure out that Do people still travel a lot on rainy days? (Further Analysis)
+We find that the reason why users prefer to use shared bikes in summer is because of the weather because in each city, the proportion of good weather is greater in Q3. However, the proportion of rainy days is also higher in some cities, so we need to do further analysis to figure out that Do people still travel a lot on rainy days?
+
+![image](https://user-images.githubusercontent.com/63156187/166620698-11933f0a-54a8-4e21-bb30-8de42772603d.png)
+
+From the plot above, we can see that in Q3, although people uses the shared bike a lot in good weather, there are still a lot of people use shared bike in rainy day in these cities. Therefore, the weather factor may not be the primary factor of affecting the total usage of shared bike.
 
 ### Hypothesis 2:
 #### The effect of COVID-19 pandemic on bike share is greater in eastern cities than middle or western cities in US.
@@ -136,10 +140,13 @@ Capital Bikeshare(Washton D.C): https://ride.capitalbikeshare.com/system-data
 
 NYC: https://github.com/nychealth/coronavirus-data
 
-Washington: https://doh.wa.gov/emergencies/covid-19/data-dashboard#downloads
+Washington: https://opendata.dc.gov/datasets/dc-covid-19-tested-overall/explore
 
 Boston: https://bphc-dashboard.shinyapps.io/BPHC-dashboard/
 
 SFO: https://sf.gov/data/covid-19-cases-and-deaths
 
-Washington: https://doh.wa.gov/emergencies/covid-19/data-dashboard
+Chicago: https://data.cityofchicago.org/Health-Human-Services/COVID-19-Daily-Cases-Deaths-and-Hospitalizations/naz8-j4nc
+
+### Weather Data Source: 
+https://www.visualcrossing.com/weather/weather-data-services
