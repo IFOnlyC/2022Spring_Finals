@@ -79,7 +79,7 @@ From the R-squared value, P-value, and the fitted linear regression plot, we can
 #### Members prefer using bike share than casual member(non-member) when distance between start and destination is less than 1 miles and trip duration is less than 15 minutes in these cities.
 
 We will use five cities including **Boston, Washton D.C, Chicago, San Francisco, New York** to test our hypothesis. In these five cities, the bikeshare companies have two category users which are member and casual.
-The following pictures display the distrubution of the member and casual users
+The following pictures display the distribution of the member and casual users
 
 ![image](https://user-images.githubusercontent.com/48091236/166553359-01e048a6-7da2-441d-af0f-652fffd3df27.png)
 ![image](https://user-images.githubusercontent.com/48091236/166553406-433ff8e4-5327-48cc-bd36-c1495fa0d030.png)
@@ -91,7 +91,7 @@ Improving the user conversion rate in Boston is hard because the proportion of c
 The city of Chicago, New York, and Washington D.C have a similar trend. The number of users has fluctuations based on temperature and the proportion of casual users is almost half of their total users.
 San Francisco is considered a Mediterranean climate, so the fluctuations are not obvious compared with other cities. The proportion of casual users is almost half of their total users.
 
-To further analysis the trip duration and distance in different cities and user's category, we explore and clear data to keep duration and distance data in a range that show their distribution.
+To further analysis the trip duration and distance in different cities and user's category, we explore and clean data to keep duration and distance data in a range that show their distribution.
 
 ***For Trip Duration***
 
