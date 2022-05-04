@@ -347,6 +347,12 @@ def get_member_casual_tpdu(bikes: pd.DataFrame,isMember: bool, isDur: bool) -> l
     >>> data = DataFrame(label)
     >>> get_member_casual_tpdu(data, True, True)
     [17.05, nan, nan, nan, 4.07]
+    >>> get_member_casual_tpdu(data, True, False)
+    [1.38, nan, nan, nan, 0.44]
+    >>> get_member_casual_tpdu(data, False, False)
+    [0.26, nan, nan, nan, 0.59]
+    >>> get_member_casual_tpdu(data, False, True)
+    [5.0, nan, nan, nan, 6.11]
 
     """
 
