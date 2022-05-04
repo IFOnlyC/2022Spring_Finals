@@ -95,15 +95,14 @@ To further analysis the trip duration and distance in different cities and user'
 
 ***For Trip Duration***
 
-![image](https://user-images.githubusercontent.com/48091236/166536422-1899d1ee-c745-4e48-9c56-a7df16891c5e.png)![image](https://user-images.githubusercontent.com/48091236/166552872-884326cc-8d58-483c-8c85-1ea6f5cf740d.png)
+![image](https://user-images.githubusercontent.com/48091236/166536422-1899d1ee-c745-4e48-9c56-a7df16891c5e.png)![image](https://user-images.githubusercontent.com/48091236/166622411-a51e66b7-24e5-43f5-a332-497db5cf6016.png)
+![image](https://user-images.githubusercontent.com/48091236/166552680-c16c7b22-1014-45ef-9b4e-caec2dae4be2.png)![image](https://user-images.githubusercontent.com/48091236/166622459-263a0031-2283-462f-ab34-6beddfb2b349.png)
+![image](https://user-images.githubusercontent.com/48091236/166552991-e641dc8c-4de2-4692-a82b-2d33a886974c.png)![image](https://user-images.githubusercontent.com/48091236/166622612-4cbfe081-f8d9-4c65-8411-8c7fe536d347.png)
+![image](https://user-images.githubusercontent.com/48091236/166553072-37792f65-6f56-4a65-a08b-32aad998b3fe.png)![image](https://user-images.githubusercontent.com/48091236/166624242-0e254f32-e753-41a0-8bf9-bcb6f11d03d6.png)
+![image](https://user-images.githubusercontent.com/48091236/166553177-a072e6ba-acc5-4ddd-b31d-c16dcaf54434.png)![image](https://user-images.githubusercontent.com/48091236/166624331-ac625153-4be5-4c5b-9f4f-63fc3b329c1c.png)
 
-![image](https://user-images.githubusercontent.com/48091236/166552680-c16c7b22-1014-45ef-9b4e-caec2dae4be2.png)![image](https://user-images.githubusercontent.com/48091236/166552748-cc75e6e5-0289-4139-9b01-938a23695530.png)
 
-![image](https://user-images.githubusercontent.com/48091236/166552991-e641dc8c-4de2-4692-a82b-2d33a886974c.png)![image](https://user-images.githubusercontent.com/48091236/166553037-2464f373-dbcd-45b9-8112-38555ba30ef1.png)
 
-![image](https://user-images.githubusercontent.com/48091236/166553072-37792f65-6f56-4a65-a08b-32aad998b3fe.png)![image](https://user-images.githubusercontent.com/48091236/166553142-79e3fd53-1d34-41be-a8b9-9a6c3cccc332.png)
-
-![image](https://user-images.githubusercontent.com/48091236/166553177-a072e6ba-acc5-4ddd-b31d-c16dcaf54434.png)![image](https://user-images.githubusercontent.com/48091236/166553200-9c8b3f4c-591c-4953-a7da-ec53f19b81a9.png)
 
 **overall, the most trip duration is lasting about 20 minutes, and members are more willing to hava a shorter trip compared with casual user.**
 
