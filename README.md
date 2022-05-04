@@ -64,7 +64,7 @@ The correlation coefficients are:
 |------------|:-----------:|--------------:|------------------:|--------------:|-------------------------:|
 | Correlation Coefficients |  -0.085123    | -0.360768         | -0.529725     | -0.339701    | -0.814073 |
 
-From the table above, we see that the correlation coefficient in Washington D.C is -0.810473, which means the covid cases have a strong correlation with the usage of the shared bike in Washington D.C. And in Boston, the covid cases have a really weak correlation with the shared bike usage.
+From the table above, we see that the correlation coefficient in Washington D.C is -0.810473, which means the covid cases have a strong negative correlation with the usage of the shared bike in Washington D.C. And in Boston, the covid cases have a really weak correlation with the shared bike usage.
 
 Then we use linear regression to demonstrate the correlation.
 ![image](https://user-images.githubusercontent.com/63156187/166609155-18eb01b4-ee52-4d9d-98c6-3ebc9d757c24.png)
