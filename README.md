@@ -98,7 +98,7 @@ To further analysis the trip duration and distance in different cities and user'
 ![image](https://user-images.githubusercontent.com/48091236/166536422-1899d1ee-c745-4e48-9c56-a7df16891c5e.png)![image](https://user-images.githubusercontent.com/48091236/166622411-a51e66b7-24e5-43f5-a332-497db5cf6016.png)
 ![image](https://user-images.githubusercontent.com/48091236/166552680-c16c7b22-1014-45ef-9b4e-caec2dae4be2.png)![image](https://user-images.githubusercontent.com/48091236/166622459-263a0031-2283-462f-ab34-6beddfb2b349.png)
 ![image](https://user-images.githubusercontent.com/48091236/166552991-e641dc8c-4de2-4692-a82b-2d33a886974c.png)![image](https://user-images.githubusercontent.com/48091236/166622612-4cbfe081-f8d9-4c65-8411-8c7fe536d347.png)
-![image](https://user-images.githubusercontent.com/48091236/166553072-37792f65-6f56-4a65-a08b-32aad998b3fe.png)![image](https://user-images.githubusercontent.com/48091236/166627089-07ab1549-2e41-4f10-ad03-b87745f457b7.png)
+![image](https://user-images.githubusercontent.com/48091236/166553072-37792f65-6f56-4a65-a08b-32aad998b3fe.png)![image](https://user-images.githubusercontent.com/48091236/166627588-f94e74d1-5890-4f66-ae54-2a259f27749a.png)
 ![image](https://user-images.githubusercontent.com/48091236/166553177-a072e6ba-acc5-4ddd-b31d-c16dcaf54434.png)![image](https://user-images.githubusercontent.com/48091236/166627216-08cbb4e9-79b5-4550-a71b-80740cdb8c5f.png)
 
 
@@ -111,7 +111,7 @@ To further analysis the trip duration and distance in different cities and user'
 ![image](https://user-images.githubusercontent.com/48091236/166566063-c8d3b711-b66c-41ae-8036-347282fe8cee.png)![image](https://user-images.githubusercontent.com/48091236/166566109-36d6b143-9a6a-4da9-a1c8-ab2238677a52.png)
 ![image](https://user-images.githubusercontent.com/48091236/166566142-f63096cd-8045-489a-b33a-2c062322f75b.png)![image](https://user-images.githubusercontent.com/48091236/166566183-b07fd268-b122-47cb-a0cd-bde2158865e5.png)
 ![image](https://user-images.githubusercontent.com/48091236/166566226-d25afafe-c481-4880-be6f-7d20ad9eac31.png)![image](https://user-images.githubusercontent.com/48091236/166566262-8bd465c4-82f9-40cf-a4be-93e47e00df33.png)
-![image](https://user-images.githubusercontent.com/48091236/166566344-5c4b0d0e-5b73-4ec4-96fd-e21d15780b82.png)![image](https://user-images.githubusercontent.com/48091236/166627246-e62d4806-c5f6-4615-b329-72ce797071c7.png)
+![image](https://user-images.githubusercontent.com/48091236/166566344-5c4b0d0e-5b73-4ec4-96fd-e21d15780b82.png)![image](https://user-images.githubusercontent.com/48091236/166566381-c877d771-067d-4507-b914-4b8aff247bc9.png)
 ![image](https://user-images.githubusercontent.com/48091236/166566432-9e42057e-8320-4a70-94da-8dc6bb9b41ce.png)![image](https://user-images.githubusercontent.com/48091236/166566464-30156d39-75ee-4f7a-9f9f-f1a405ffd496.png)
 
 ***overall, the distribution bwtween members and casual members for trip Distance is similar.***
