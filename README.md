@@ -116,7 +116,7 @@ To further analysis the trip duration and distance in different cities and user'
 Sum up the difference between members and casual users behavior in trip duration and distance, we calculate mean in five different cities.
 ![image](https://user-images.githubusercontent.com/48091236/166570977-2a9e3ea4-a961-4103-bb09-face98537451.png)
 
-***Conclusion:*** members and casual members have simialr trip distance, but members' trip duration time is lesser than casual users. Members prefer using bike share than casual member(non-member) when trip duration is about 10 minutes in these cities.
+***Conclusion:*** members and casual members have simialr trip distance, but members' trip duration time is shorter than casual users. Members prefer using bike share than casual member(non-member) when trip duration is about 10 minutes in these cities.
 
 
 ### DataSets Source:
@@ -134,7 +134,7 @@ Capital Bikeshare(Washton D.C): https://ride.capitalbikeshare.com/system-data
 
 ### Covid-19 Data Source:
 
-NYC: https://github.com/nychealth/coronavirus-data （他们传在了github上)
+NYC: https://github.com/nychealth/coronavirus-data
 
 Washington: https://doh.wa.gov/emergencies/covid-19/data-dashboard#downloads
 
