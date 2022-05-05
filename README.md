@@ -98,8 +98,8 @@ To further analysis the trip duration and distance in different cities and user'
 ![image](https://user-images.githubusercontent.com/48091236/166536422-1899d1ee-c745-4e48-9c56-a7df16891c5e.png)![image](https://user-images.githubusercontent.com/48091236/166622411-a51e66b7-24e5-43f5-a332-497db5cf6016.png)
 ![image](https://user-images.githubusercontent.com/48091236/166552680-c16c7b22-1014-45ef-9b4e-caec2dae4be2.png)![image](https://user-images.githubusercontent.com/48091236/166622459-263a0031-2283-462f-ab34-6beddfb2b349.png)
 ![image](https://user-images.githubusercontent.com/48091236/166552991-e641dc8c-4de2-4692-a82b-2d33a886974c.png)![image](https://user-images.githubusercontent.com/48091236/166622612-4cbfe081-f8d9-4c65-8411-8c7fe536d347.png)
-![image](https://user-images.githubusercontent.com/48091236/166553072-37792f65-6f56-4a65-a08b-32aad998b3fe.png)![image](https://user-images.githubusercontent.com/48091236/166624242-0e254f32-e753-41a0-8bf9-bcb6f11d03d6.png)
-![image](https://user-images.githubusercontent.com/48091236/166553177-a072e6ba-acc5-4ddd-b31d-c16dcaf54434.png)![image](https://user-images.githubusercontent.com/48091236/166624331-ac625153-4be5-4c5b-9f4f-63fc3b329c1c.png)
+![image](https://user-images.githubusercontent.com/48091236/166553072-37792f65-6f56-4a65-a08b-32aad998b3fe.png)![image](https://user-images.githubusercontent.com/48091236/166627588-f94e74d1-5890-4f66-ae54-2a259f27749a.png)
+![image](https://user-images.githubusercontent.com/48091236/166553177-a072e6ba-acc5-4ddd-b31d-c16dcaf54434.png)![image](https://user-images.githubusercontent.com/48091236/166627216-08cbb4e9-79b5-4550-a71b-80740cdb8c5f.png)
 
 
 
