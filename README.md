@@ -10,7 +10,9 @@ Jingwei Wang (jw103)  Github: sky1122
 
 HangQing He (hhe16)  Github: mingzhuqiuxiahhq
 
-We choose 5 cities for our analysis. They are New York, Washington D.C, Chicago, San Francisco and Boston.
+We choose 5 cities for our analysis. They are New York, Washington D.C, Chicago, San Francisco, and Boston.
+Our analysis period of the data is from 2021-03 to 2022-03.
+Because of the change of the column names and data file names and the amount of data to process (currently, we process over 15 million rows of data), we don't choose to analyze the data for a long period, like 5 years period.
 
 ### Hypothesis 1:
 #### Users prefer to use shared bikes in summer rather than spring, autumn and winter.
