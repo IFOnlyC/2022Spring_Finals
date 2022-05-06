@@ -14,13 +14,29 @@ We choose 5 cities for our analysis. They are New York, Washington D.C, Chicago,
 Our analysis period of the data is from 2021-03 to 2022-03.
 Because of the change of the column names and data file names and the amount of data to process (currently, we process over 15 million rows of data), we don't choose to analyze the data for a long period, like 5 years period.
 
+### Dataset Sample
+Take an example from one city (Boston)
+#### Bikeshare data
+
+<img width="965" alt="image" src="https://user-images.githubusercontent.com/63156187/167223371-8001c1b2-a31a-4bf7-b47a-9426e49f8aca.png">
+
+#### Covid data
+
+<img width="1195" alt="image" src="https://user-images.githubusercontent.com/63156187/167223221-462a2dd3-51bb-4440-a2ea-404fb57e0f9d.png">
+
+#### Weather data
+
+<img width="1512" alt="image" src="https://user-images.githubusercontent.com/63156187/167223203-b7f1b3be-5608-4390-bef5-0f749a32daba.png">
+
+
 ### Hypothesis 1:
 #### Users prefer to use shared bikes in summer rather than spring, autumn and winter.
 First, we create a plot of each city's total shared bike usage quarterly.
-(Jan-Mar: Q1)
-(Apr-Jun: Q2)
-(July-Sep: Q3)
-(Oct-Dec: Q4)
+
+- (Jan-Mar: Q1)
+- (Apr-Jun: Q2)
+- (July-Sep: Q3)
+- (Oct-Dec: Q4)
 
 ![bike_trend](https://user-images.githubusercontent.com/63156187/166621514-9686a4d4-a6b1-457e-a3e0-c81d43dfa1d9.png)
 
@@ -33,12 +49,14 @@ Then we conduct a deeper analysis in daily weather dimension.
 ![SFO-weather](https://user-images.githubusercontent.com/63156187/166621485-de165260-0c51-4451-8ca3-7890c0171e46.png)
 ![Washington-weather](https://user-images.githubusercontent.com/63156187/166621493-356f8032-0382-42ef-a967-0146293d0558.png)
 
-The plots above are the number of types of daily weather in each city.
+Here are some plots of the daily weather of each city and its total shared bike usage in 4 quarters. The blue bar represents clear-day, lavender one represents partly-cloudy day, pink one represents cloudy day, the steelblue one represents rainy day, the aquamarine represents the snow day and the green one is windy day.
+
 We find that the reason why users prefer to use shared bikes in summer is because of the weather because in each city, the proportion of good weather is greater in Q3. However, the proportion of rainy days is also higher in some cities, so we need to do further analysis to figure out that Do people still travel a lot on rainy days?
 
 ![image](https://user-images.githubusercontent.com/63156187/166620698-11933f0a-54a8-4e21-bb30-8de42772603d.png)
 
-From the plot above, we can see that in Q3, although people uses the shared bike a lot in good weather, there are still a lot of people use shared bike in rainy day in these cities. Therefore, the weather factor may not be the primary factor of affecting the total usage of shared bike.
+From the plot above, we can see that in Q3, although people uses the shared bike a lot in good weather, the usage of shared bike in rainy days is still higher in these cities. Therefore, the weather factor may not be the primary factor of affecting the total usage of shared bike.
+
 
 ### Hypothesis 2:
 #### The effect of COVID-19 pandemic on bike share is greater in eastern cities than middle or western cities in US.
@@ -51,7 +69,14 @@ First, we focus on the overall comparison between each city's total shared-bike 
 ![image](https://user-images.githubusercontent.com/63156187/166606152-ea78feec-e9ca-4373-8110-61a4d03cc954.png)
 ![image](https://user-images.githubusercontent.com/63156187/166606220-712be286-f577-478b-b079-5bac9bb65c6d.png)
 
-We can see that in the plot of Washington D.C, the trend of bike usage and the trend of covid cases may have a relationship or correlation. For other cities, there is meaningless to do further study on the relationship between these cities' covid cases and the usage of shared bikes. Therefore, we assume a **new Hypothesis** that is In Washington D.C, the covid cases will not affect the usage of shared bikes.
+The cities we choose may be the representatives in the eastern, middle, and western areas of the United States. 
+Let’s look on the overall comparison between each city's total usage shared-bike and their covid cases. The time period of analysis is from March 2021 to March 2022. We can see that the growth of usage of shared bike in these cities can not match the decrease of the covid cases in these cities from these turning points. So there may be meaningless to study the relationship between these cities. Thus our hypothesis may not be accepted.
+
+However, in Washington D.C, the growth of usage of shared bikes may match with the decrease of the covid cases. The trend of bike usage and the trend of covid cases may have a relationship or correlation. 
+But there are many other factors, maybe this is a coincidence. So, we raise up ***a new hypothesis***. We need to do further analysis on Washington D.C.
+
+#### New Hypothesis: In Washington D.C, the covid cases may not affect the usage of shared bikes. 
+
 And we decide to use a scatter plot to see the correlations and use correlation coefficients to determine whether there a relationship is.
 
 ![image](https://user-images.githubusercontent.com/63156187/166606707-7dc59afa-c00e-4ef1-8ecb-592d01cbe16b.png)
@@ -60,21 +85,22 @@ And we decide to use a scatter plot to see the correlations and use correlation 
 ![image](https://user-images.githubusercontent.com/63156187/166606814-aa6e4053-ba19-45fd-8a72-1d5305bead97.png)
 ![image](https://user-images.githubusercontent.com/63156187/166606859-8748df01-830b-4e36-aea3-0dc03b0b8e01.png)
 
+Then we use the Pearson method to calculate the correlation coefficients and use linear regression to demonstrate that.
+
 The correlation coefficients are:
 
 |            |   Boston    |      NYC      |      Chicago      |      SFO      |      Washington D.C      |
 |------------|:-----------:|--------------:|------------------:|--------------:|-------------------------:|
 | Correlation Coefficients |  -0.085123    | -0.360768         | -0.529725     | -0.339701    | -0.814073 |
 
-From the table above, we see that the correlation coefficient in Washington D.C is -0.810473, which means the covid cases have a strong negative correlation with the usage of the shared bike in Washington D.C. And in Boston, the covid cases have a really weak correlation with the shared bike usage.
+We use linear regression to demonstrate the correlation.
 
-Then we use linear regression to demonstrate the correlation.
 ![image](https://user-images.githubusercontent.com/63156187/166609155-18eb01b4-ee52-4d9d-98c6-3ebc9d757c24.png)
 
 R-squared: 0.662715
 P-value: 0.0012688629650304379
 
-From the R-squared value, P-value, and the fitted linear regression plot, we can confirm that the new hypothesis will be rejected and the covid cases will have an impact on the usage of shared bikes in Washington D.C.
+From above, we see that the correlation coefficient is -0.81 which means there is a strong negative correlation of covid cases and total usage of shared bike in Washington D.C. And the R-squared is about 0.66 and p-value is 0.001 after we do the linear regression. So in this case, in Washington D.C, the increase of covid cases will decrease the usage of shared bike. So we reject our new hypothesis and accept that the covid cases will affect the usage of shared bikes in Washington D.C.
 
 
 ### Hypothesis 3:
