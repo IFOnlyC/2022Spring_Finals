@@ -14,6 +14,8 @@ We choose 5 cities for our analysis. They are New York, Washington D.C, Chicago,
 Our analysis period of the data is from 2021-03 to 2022-03.
 Because of the change of the column names and data file names and the amount of data to process (currently, we process over 15 million rows of data), we don't choose to analyze the data for a long period, like 5 years period.
 
+-----------------
+
 ### Project structure
 
 1. Pre-install the libraries we use in the program: **geographiclib, pandas, scipy, numpy and matplotlib**
@@ -24,6 +26,8 @@ Because of the change of the column names and data file names and the amount of 
 - process and merge the weather data into one dataframe (The weather data file can not be requested to download because the website has a download limit, one account only can download two files, so we provide the weather data files.)
 4. Run **analysis_hypothesis.py**
 - Get the results and plots of our hypo1 ~ hypo3.
+
+-----------------
 
 ### Dataset Sample
 
@@ -41,7 +45,7 @@ Take an example from one city (Boston)
 
 <img width="1512" alt="image" src="https://user-images.githubusercontent.com/63156187/167223203-b7f1b3be-5608-4390-bef5-0f749a32daba.png">
 
-
+-----------------
 ### Hypothesis 1:
 #### Users prefer to use shared bikes in summer rather than spring, autumn and winter.
 First, we create a plot of each city's total shared bike usage quarterly.
@@ -70,6 +74,7 @@ We find that the reason why users prefer to use shared bikes in summer is becaus
 
 From the plot above, we can see that in Q3, although people uses the shared bike a lot in good weather, the usage of shared bike in rainy days is still higher in these cities. Therefore, the weather factor may not be the primary factor of affecting the total usage of shared bike.
 
+-----------------
 
 ### Hypothesis 2:
 #### The effect of COVID-19 pandemic on bike share is greater in eastern cities than middle or western cities in US.
@@ -115,6 +120,7 @@ P-value: 0.0012688629650304379
 
 From above, we see that the correlation coefficient is -0.81 which means there is a strong negative correlation of covid cases and total usage of shared bike in Washington D.C. And the R-squared is about 0.66 and p-value is 0.001 after we do the linear regression. So in this case, in Washington D.C, the increase of covid cases will decrease the usage of shared bike. So we reject our new hypothesis and accept that the covid cases will affect the usage of shared bikes in Washington D.C.
 
+-----------------
 
 ### Hypothesis 3:
 #### Members prefer using bike share than casual member(non-member) when distance between start and destination is less than 1 miles and trip duration is less than 15 minutes in these cities.
@@ -163,6 +169,7 @@ Sum up the difference between members and casual users behavior in trip duration
 ***Conclusion:*** members and casual members have simialr trip distance, but members' trip duration time is shorter than casual users. Members prefer using bike share than casual member(non-member) when trip duration is about 10 minutes in these cities.
 
 
+-----------------
 ### DataSets Source:
 
 BayWheel(San Francisco): https://www.lyft.com/bikes/bay-wheels/system-data
