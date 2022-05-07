@@ -14,8 +14,20 @@ We choose 5 cities for our analysis. They are New York, Washington D.C, Chicago,
 Our analysis period of the data is from 2021-03 to 2022-03.
 Because of the change of the column names and data file names and the amount of data to process (currently, we process over 15 million rows of data), we don't choose to analyze the data for a long period, like 5 years period.
 
+### Project structure
+
+1. Run **request_data.py**
+- request bike data and covid data, except for the covid data of Boston and Washington D.C. (They have dynamic urls when we want to request to download the data, so we provide these two files.)
+- process and merge the bike data into one dataframe
+- process and merge the covid data into one dataframe
+- process and merge the weather data into one dataframe (The weather data file can not be requested to download because the website has a download limit, one account only can download two files, so we provide the weather data files.)
+2. Run **analysis_hypothesis.py**
+- Get the results and plots of our hypo1 ~ hypo3.
+
 ### Dataset Sample
+
 Take an example from one city (Boston)
+
 #### Bikeshare data
 
 <img width="965" alt="image" src="https://user-images.githubusercontent.com/63156187/167223371-8001c1b2-a31a-4bf7-b47a-9426e49f8aca.png">
