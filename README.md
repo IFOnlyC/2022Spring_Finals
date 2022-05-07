@@ -16,12 +16,13 @@ Because of the change of the column names and data file names and the amount of 
 
 ### Project structure
 
-1. Run **request_data.py**
+1. Pre-install the libraries we use in the program: **geographiclib, pandas, scipy, numpy and matplotlib**
+3. Run **request_data.py**
 - request bike data and covid data, except for the covid data of Boston and Washington D.C. (They have dynamic urls when we want to request to download the data, so we provide these two files.)
 - process and merge the bike data into one dataframe
 - process and merge the covid data into one dataframe
 - process and merge the weather data into one dataframe (The weather data file can not be requested to download because the website has a download limit, one account only can download two files, so we provide the weather data files.)
-2. Run **analysis_hypothesis.py**
+4. Run **analysis_hypothesis.py**
 - Get the results and plots of our hypo1 ~ hypo3.
 
 ### Dataset Sample
