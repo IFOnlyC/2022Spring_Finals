@@ -33,6 +33,13 @@ Because of the change of the column names and data file names and the amount of 
 
 Take an example from one city (Boston)
 
+#### Doctest
+
+Due to some difference of PyCharm between Window and Mac OS system, 
+some doctest runs fine in Mac but produce error when in Windows and vice versa. 
+This problem is reduced down to the minimum. 
+
+
 #### Bikeshare data
 
 <img width="965" alt="image" src="https://user-images.githubusercontent.com/63156187/167223371-8001c1b2-a31a-4bf7-b47a-9426e49f8aca.png">
