@@ -195,12 +195,10 @@ def clean_df(df, *df_name, df_type='covid'):
     >>> a = [['Window_title','Title','Description1','Category1','Description2','Category2','Value','Value_unit','Value_1','Value_1_unit', 'Comparison', 'Timestamp'],['COVID-19 Positive Tests','COVID-19 Positive Tests','Dates','01/22/2020','Measures','Positive Tests','0','cases','','cases (7-day moving avg)','','04/29/2022']]
     >>> df = pd.DataFrame(a)
     >>> clean = clean_df(df, 'Boston_COVID', 'covid')
-    >>> display(clean)
-                             0                        1             2           3             4               5      6           7        8                         9          10          11          name
-    0             Window_title                    Title  Description1   Category1  Description2       Category2  Value  Value_unit  Value_1              Value_1_unit  Comparison   Timestamp  Boston_COVID
-    1  COVID-19 Positive Tests  COVID-19 Positive Tests         Dates  01/22/2020      Measures  Positive Tests      0       cases           cases (7-day moving avg)              04/29/2022  Boston_COVID
-
-    [2 rows x 13 columns]
+    >>> display(clean[3])
+    0     Category1
+    1    01/22/2020
+    Name: 3, dtype: object
     >>> clean = clean_df(df, 'BOS covid', 'covid')
     Traceback (most recent call last):
         ...
@@ -253,19 +251,19 @@ def cast_bike_df(df, df_name):
     >>> bay = [['357CDE244D24405B','electric_bike','26/01/2021 11:32','26/01/2021 11:38','37.76','-122.41','37.76','-122.42','casual'], ['19A3E1F4211D0EE8','electric_bike','26/01/2021 14:16','26/01/2021 14:19','37.77','-122.41','37.76','-122.41','casual']]
     >>> bay = pd.DataFrame(bay, columns = ['ride_id','rideable_type', 'started_at', 'ended_at', 'start_lat', 'start_lng', 'end_lat', 'end_lng', 'member_casual'])
     >>> bay = cast_bike_df(bay, 'bay')
-    >>> display(bay)
-                ride_id  rideable_type          started_at            ended_at start_lat start_lng end_lat  end_lng member_casual  tripduration
-    0  357CDE244D24405B  electric_bike 2021-01-26 11:32:00 2021-01-26 11:38:00     37.76   -122.41   37.76  -122.42        casual           360
-    1  19A3E1F4211D0EE8  electric_bike 2021-01-26 14:16:00 2021-01-26 14:19:00     37.77   -122.41   37.76  -122.41        casual           180
+    >>> display(bay['tripduration'])
+    0    360
+    1    180
+    Name: tripduration, dtype: int64
 
 
     >>> blue = [['914','00:04.6','15:19.2','42.366277','-71.09169','-71.07782811','5316','Customer','2139'], ['1085','00:21.8','18:27.5','42.35096144','-71.07782811','42.378965','-71.068607','4917','Subscriber','2116']]
     >>> blue = pd.DataFrame(blue, columns = ['tripduration','starttime','stoptime','start station latitude','start station longitude','end station latitude','end station longitude','bikeid','usertype','postal code'])
     >>> blue = cast_bike_df(blue, 'blue')
-    >>> display(blue)
-      tripduration          started_at            ended_at    start_lat     start_lng       end_lat     end_lng   ride_id member_casual postal code
-    0          914 2022-05-07 00:04:36 2022-05-07 15:19:12    42.366277     -71.09169  -71.07782811        5316  Customer          2139        None
-    1         1085 2022-05-07 00:21:48 2022-05-07 18:27:30  42.35096144  -71.07782811     42.378965  -71.068607      4917    Subscriber        2116
+    >>> display(blue[['tripduration']])
+      tripduration
+    0          914
+    1         1085
 
 
     """
