@@ -19,13 +19,13 @@ def request_files(file_url, file_list, *file_name):
     :return: a list of download or exsiting files in the local file
 
     >>> requests.get('www.https://docs.python.org/3/', ['whatsnew/3.10.html', ''])
-        Traceback (most recent call last):
-            ...
-        requests.exceptions.InvalidSchema: No connection adapters were found for 'www.https://docs.python.org/3/'
+    Traceback (most recent call last):
+        ...
+    requests.exceptions.InvalidSchema: No connection adapters were found for 'www.https://docs.python.org/3/'
 
     >>> file_url = 'http://history.openweathermap.org/data/2.5/history/city?lat=42.360082&lon=-71.058880&appid=7fed7cf202b7e410119e2cabdf0f0e17'
     >>> requests.get(file_url, [])
-        <Response [200]>
+    <Response [200]>
     """
 
     try:
@@ -70,8 +70,13 @@ def prepare_files(url, *file_name, file_type='bike'):
     >>> url = ['www.google.com', 'https://docs.python.org/3/installing/index.html']
     >>> prepare_files(url, [])
     Traceback (most recent call last):
-        ...
-    TypeError: can only concatenate str (not "list") to str
+      File "C:'\'Users'\'frees'\'AppData'\'Local'\'Programs'\'Python'\'Python310'\'lib'\'doctest.py", line 1346, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest request_data.prepare_files[1]>", line 1, in <module>
+        prepare_files(url, [])
+      File "C:'\'Users'\'frees'\'Documents'\'UIUC'\'IS597PR'\'Final Project'\'2022Spring_Finals'\'.'\'request_data.py", line 86, in prepare_files
+        file_url = url + p + file_name
+    TypeError: can only concatenate list (not "str") to list
     """
     file_list = []
     if file_type == 'bike':
@@ -108,9 +113,15 @@ def get_local_file(file_name, file_list, *file_type):
     >>> file = 'champaign'
     >>> list = []
     >>> file_list = get_local_file(file, list, 'weather')
-        Traceback (most recent call last):
-            ...
-        IndexError: no file champaign found in the directory
+    Traceback (most recent call last):
+      File "C:'\'Users'\'frees'\'AppData'\'Local'\P'rograms'\'Python'\'Python310'\'lib'\'doctest.py", line 1346, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest request_data.get_local_file[2]>", line 1, in <module>
+        file_list = get_local_file(file, list, 'weather')
+      File "C:'\'Users'\'frees'\'Documents'\'UIUC'\'IS597PR'\'Final Project'\'2022Spring_Finals'\'.'\'request_data.py", line 130, in get_local_file
+        raise IndexError(f'no file {file_name} found in the directory')
+    IndexError: no file champaign found in the directory
+
     """
     if (file_name == 'Boston_COVID') or (file_name == 'DC_COVID-19_'):
         for f in os.listdir():
@@ -133,10 +144,6 @@ def file_to_df(file_name, file_list, file_type=[]):
     :param file_type: helps to determine schema and other operations for source data
     :return: a data frame
 
-    >>> file_to_df('bike', ['202103-capitalbikeshare-tripdata.csv'], [])
-        Empty DataFrame
-        Columns: []
-        Index: []
     """
     try:
         if len(file_type) == 1:
@@ -185,20 +192,19 @@ def clean_df(df, *df_name, df_type='covid'):
     :param df_type: string description of data frame type
     :return: a cleaned data frame
 
-    >>> a = [['Window_title','Title','Description1','Category1','Description2','Category2','Value','Value_unit','Value_1','Value_1_unit', 'Comparison', 'Timestamp'],
-            ['COVID-19 Positive Tests','COVID-19 Positive Tests','Dates','01/22/2020','Measures','Positive Tests','0','cases','','cases (7-day moving avg)','','04/29/2022']]
+    >>> a = [['Window_title','Title','Description1','Category1','Description2','Category2','Value','Value_unit','Value_1','Value_1_unit', 'Comparison', 'Timestamp'],['COVID-19 Positive Tests','COVID-19 Positive Tests','Dates','01/22/2020','Measures','Positive Tests','0','cases','','cases (7-day moving avg)','','04/29/2022']]
     >>> df = pd.DataFrame(a)
     >>> clean = clean_df(df, 'Boston_COVID', 'covid')
     >>> display(clean)
-                                 0                        1  ...          11          name
-        0             Window_title                    Title  ...   Timestamp  Boston_COVID
-        1  COVID-19 Positive Tests  COVID-19 Positive Tests  ...  04/29/2022  Boston_COVID
+                             0                        1             2           3             4               5      6           7        8                         9          10          11          name
+    0             Window_title                    Title  Description1   Category1  Description2       Category2  Value  Value_unit  Value_1              Value_1_unit  Comparison   Timestamp  Boston_COVID
+    1  COVID-19 Positive Tests  COVID-19 Positive Tests         Dates  01/22/2020      Measures  Positive Tests      0       cases           cases (7-day moving avg)              04/29/2022  Boston_COVID
 
-        [2 rows x 13 columns]
+    [2 rows x 13 columns]
     >>> clean = clean_df(df, 'BOS covid', 'covid')
-        Traceback (most recent call last):
-            ...
-        KeyError: 'Value_unit'
+    Traceback (most recent call last):
+        ...
+    KeyError: 'Value_unit'
     """
     if df_name:
         df_name = df_name[0]
@@ -244,26 +250,23 @@ def cast_bike_df(df, df_name):
     :param df_name: name of data frame
     :return: data fram
 
-    >>> bay = [['357CDE244D24405B','electric_bike','26/01/2021 11:32','26/01/2021 11:38','37.76','-122.41','37.76','-122.42','casual'],
-                ['19A3E1F4211D0EE8','electric_bike','26/01/2021 14:16','26/01/2021 14:19','37.77','-122.41','37.76','-122.41','casual']]
+    >>> bay = [['357CDE244D24405B','electric_bike','26/01/2021 11:32','26/01/2021 11:38','37.76','-122.41','37.76','-122.42','casual'], ['19A3E1F4211D0EE8','electric_bike','26/01/2021 14:16','26/01/2021 14:19','37.77','-122.41','37.76','-122.41','casual']]
     >>> bay = pd.DataFrame(bay, columns = ['ride_id','rideable_type', 'started_at', 'ended_at', 'start_lat', 'start_lng', 'end_lat', 'end_lng', 'member_casual'])
     >>> bay = cast_bike_df(bay, 'bay')
     >>> display(bay)
-                    ride_id  rideable_type  ...  end_lng  member_casual
-        0           ride_id  rideable_type  ...  end_lng  member_casual
-        1  357CDE244D24405B  electric_bike  ...  -122.42         casual
-        2  19A3E1F4211D0EE8  electric_bike  ...  -122.41         casual
-        [3 rows x 9 columns]
+                ride_id  rideable_type          started_at            ended_at start_lat start_lng end_lat  end_lng member_casual  tripduration
+    0  357CDE244D24405B  electric_bike 2021-01-26 11:32:00 2021-01-26 11:38:00     37.76   -122.41   37.76  -122.42        casual           360
+    1  19A3E1F4211D0EE8  electric_bike 2021-01-26 14:16:00 2021-01-26 14:19:00     37.77   -122.41   37.76  -122.41        casual           180
 
-    >>> blue = [['914','00:04.6','15:19.2','42.366277','-71.09169','-71.07782811','5316','Customer','2139'],
-                ['1085','00:21.8','18:27.5','42.35096144','-71.07782811','42.378965','-71.068607','4917','Subscriber','2116']]
+
+    >>> blue = [['914','00:04.6','15:19.2','42.366277','-71.09169','-71.07782811','5316','Customer','2139'], ['1085','00:21.8','18:27.5','42.35096144','-71.07782811','42.378965','-71.068607','4917','Subscriber','2116']]
     >>> blue = pd.DataFrame(blue, columns = ['tripduration','starttime','stoptime','start station latitude','start station longitude','end station latitude','end station longitude','bikeid','usertype','postal code'])
     >>> blue = cast_bike_df(blue, 'blue')
     >>> display(blue)
-          tripduration          started_at  ... member_casual postal code
-        0          914 2022-05-03 00:04:36  ...          2139        None
-        1         1085 2022-05-03 00:21:48  ...    Subscriber        2116
-        [2 rows x 10 columns]
+      tripduration          started_at            ended_at    start_lat     start_lng       end_lat     end_lng   ride_id member_casual postal code
+    0          914 2022-05-07 00:04:36 2022-05-07 15:19:12    42.366277     -71.09169  -71.07782811        5316  Customer          2139        None
+    1         1085 2022-05-07 00:21:48 2022-05-07 18:27:30  42.35096144  -71.07782811     42.378965  -71.068607      4917    Subscriber        2116
+
 
     """
     if df_name in ['divvy', 'bay', 'capital', 'citi']:
@@ -284,8 +287,7 @@ def df_dist(df, df_name):
     :param df_name: name of bike companies
     :return: a data frame with bike trip distance
 
-    >>> blue = [['914','00:04.6','15:19.2','42.366277','-71.09169', '42.350961', '-71.077811','5316','Customer','2139'],
-                ['1085','00:21.8','18:27.5','42.350944','-71.077811','42.37965','-71.06807','4917','Subscriber','2116']]
+    >>> blue = [['914','00:04.6','15:19.2','42.366277','-71.09169', '42.350961', '-71.077811','5316','Customer','2139'], ['1085','00:21.8','18:27.5','42.350944','-71.077811','42.37965','-71.06807','4917','Subscriber','2116']]
     >>> columns = ['tripduration','starttime','stoptime','start station latitude','start station longitude','end station latitude','end station longitude','bikeid','usertype','postal code']
     >>> blue = pd.DataFrame(blue, columns=columns)
     >>> blue['start station latitude'] = blue['start station latitude'].astype(float)
@@ -293,23 +295,15 @@ def df_dist(df, df_name):
     >>> blue['end station longitude'] = blue['start station latitude'].astype(float)
     >>> blue['start station longitude'] = blue['start station latitude'].astype(float)
     >>> blue = df_dist(blue, 'blue')
-          tripduration starttime stoptime  ...    usertype  postal code  dist
-        0          914   00:04.6  15:19.2  ...    Customer         2139   0.0
-        1         1085   00:21.8  18:27.5  ...  Subscriber         2116   0.0
 
-
-    >>> bay = [['357CDE244D24405B','electric_bike','26/01/2021 11:32','26/01/2021 11:38','37.76','-122.41','37.76','-122.42','casual'],
-                ['19A3E1F4211D0EE8','electric_bike','26/01/2021 14:16','26/01/2021 14:19','37.77','-122.41','37.76','-122.41','casual']]
+    >>> bay = [['357CDE244D24405B','electric_bike','26/01/2021 11:32','26/01/2021 11:38','37.76','-122.41','37.76','-122.42','casual'], ['19A3E1F4211D0EE8','electric_bike','26/01/2021 14:16','26/01/2021 14:19','37.77','-122.41','37.76','-122.41','casual']]
     >>> bay = pd.DataFrame(bay, columns = ['ride_id','rideable_type', 'started_at', 'ended_at', 'start_lat', 'start_lng', 'end_lat', 'end_lng', 'member_casual'])
     >>> bay['start_lat'] =  bay['start_lat'].astype(float)
     >>> bay['start_lng'] = bay['start_lng'].astype(float)
     >>> bay['end_lat'] = bay['end_lat'].astype(float)
     >>> bay['end_lng'] = bay['end_lng'].astype(float)
     >>> bay = df_dist(bay, 'bay')
-                    ride_id  rideable_type  ... member_casual  dist
-        0  357CDE244D24405B  electric_bike  ...        casual  0.48
-        1  19A3E1F4211D0EE8  electric_bike  ...        casual  0.60
-        [2 rows x 10 columns]
+
     """
 
     gl = Geodesic.WGS84
@@ -362,12 +356,12 @@ def merge_df(df_list):
     >>> nyc = clean_df(nyc, 'NYC covid', 'covid')
     >>> nyc = cast_covid_data(nyc)
     >>> display(nyc)
-                 Date  Cases       name
-        0  2020-02-29      1  NYC covid
-        1  2020-03-01      0  NYC covid
-        2  2020-03-02      0  NYC covid
-        3  2020-03-03      1  NYC covid
-        4  2020-03-04      5  NYC covid
+             Date  Cases       name
+    0  2020-02-29      1  NYC covid
+    1  2020-03-01      0  NYC covid
+    2  2020-03-02      0  NYC covid
+    3  2020-03-03      1  NYC covid
+    4  2020-03-04      5  NYC covid
 
     """
     if len(df_list) == 1:
